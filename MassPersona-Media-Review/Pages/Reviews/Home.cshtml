@@ -1,0 +1,51 @@
+﻿@page
+@model MassPersonaMediaReview.Pages.Reviews.HomeModel
+@{
+    ViewData["Title"] = "Reviews List";
+}
+<h3>@ViewData["Title"]</h3>
+<hr>
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New Review</a>
+</p>
+
+<table class="table table-success table-striped table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Reviews[0].Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Reviews[0].Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Reviews[0].Category)</th>
+            <th>@Html.DisplayNameFor(model => model.Reviews[0].ReviewText)</th>
+            <th>@Html.DisplayNameFor(model => model.Reviews[0].Rating)</th>
+            <th>@Html.DisplayNameFor(model => model.Reviews[0].DateReviewed)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model != null && Model.Reviews.Any())
+        {
+            @foreach (var review in Model.Reviews)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(item => review.Id)</td>
+                    <td>@Html.DisplayFor(item => review.Title)</td>
+                    <td>@Html.DisplayFor(item => review.Category)</td>
+                    <td>@Html.DisplayFor(item => review.ReviewText)</td>
+                    <td>@Html.DisplayFor(item => review.Rating)</td>
+                    <td>@review.DateReviewed.ToString("MM/dd/yyyy")</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@review.Id" class="btn btn-primary">Edit</a> |
+                        <a asp-page="./View" asp-route-id="@review.Id" class="btn btn-primary">View</a> |
+                        <a asp-page="./Delete" asp-route-id="@review.Id" class="btn btn-primary">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center">No reviews found at this moment!</td>
+            </tr>
+        }
+    </tbody>
+</table>
