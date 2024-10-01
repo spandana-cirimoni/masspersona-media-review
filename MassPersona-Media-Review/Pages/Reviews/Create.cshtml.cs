@@ -17,7 +17,7 @@ namespace MassPersona_Media_Review.Pages.Reviews
         }
         [BindProperty]
         public Review Reviews{ get; set; } = new Review();
-        public SelectList CategoryList { get; set; }
+        public SelectList? CategoryList { get; set; }
 
         public async Task<IActionResult> OnPostAsync(){
             CategoryList = new SelectList(Enum.GetValues(typeof(Category)));

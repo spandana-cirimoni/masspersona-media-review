@@ -1,7 +1,7 @@
 ﻿@page
-@model MassPersona_Media_Review.Pages.Reviews.CreateModel
+@model MassPersona_Media_Review.Pages.Reviews.EditModel
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
 <h3>@ViewData["Title"]</h3>
@@ -9,6 +9,7 @@
 <div class="row shadow">
         <div class="col-md-6">
         <form method="post">
+            <input type="hidden" asp-for="Reviews.Id">
             <div class="form-group">
                 <label asp-for="Reviews.Title" class="control-label"></label>
                 <input asp-for="Reviews.Title" class="form-control" maxlength="25"/>
@@ -32,7 +33,7 @@
                 <span asp-validation-for="Reviews.Rating" class="text-danger"></span>
             </div>
             <div class="form-group mt-2">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Edit" class="btn btn-success" />
                 <a asp-page="Home" class="btn btn-secondary">Cancel</a>
             </div>
         </form>

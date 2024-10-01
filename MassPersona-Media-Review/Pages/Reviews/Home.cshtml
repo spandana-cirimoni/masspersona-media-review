@@ -10,9 +10,8 @@
 </p>
 
 <table class="table table-success table-striped table-responsive table-hover">
-    <thead>
+    <thead class="table-dark">
         <tr>
-            <th>@Html.DisplayNameFor(model => model.Reviews[0].Id)</th>
             <th>@Html.DisplayNameFor(model => model.Reviews[0].Title)</th>
             <th>@Html.DisplayNameFor(model => model.Reviews[0].Category)</th>
             <th>@Html.DisplayNameFor(model => model.Reviews[0].ReviewText)</th>
@@ -27,7 +26,6 @@
             @foreach (var review in Model.Reviews)
             {
                 <tr>
-                    <td>@Html.DisplayFor(item => review.Id)</td>
                     <td>@Html.DisplayFor(item => review.Title)</td>
                     <td>@Html.DisplayFor(item => review.Category)</td>
                     <td>@Html.DisplayFor(item => review.ReviewText)</td>

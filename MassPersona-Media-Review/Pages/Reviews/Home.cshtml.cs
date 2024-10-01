@@ -12,7 +12,7 @@ namespace MassPersonaMediaReview.Pages.Reviews
         public HomeModel(MyAppDBContext context){
             _context = context;
         }
-        public List<Review> Reviews{ get; set; }
+        public List<Review> Reviews { get; set; } = new List<Review>();
         public async Task OnGetAsync()
         {
             if(_context.Reviews!=null){

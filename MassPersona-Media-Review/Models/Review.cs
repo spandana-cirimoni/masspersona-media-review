@@ -7,17 +7,19 @@ namespace MassPersonaMediaReview.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        public string Title { get; set; }
+        [Required(ErrorMessage = "Title is required.")]
+        [StringLength(100, ErrorMessage = "Title cannot be longer than 25 characters.")]
+        public string Title { get; set; } = string.Empty;
 
-        [Required]
-        public Category Category { get; set; } // e.g., Movie, Book, Game
+        [Required(ErrorMessage = "Category is required.")]
+        public Category? Category { get; set; }
 
-        [Required]
-        public string ReviewText { get; set; }
+        [Required(ErrorMessage = "Review text is required.")]
+        [StringLength(1000, ErrorMessage = "Review text cannot be longer than 100 characters.")]
+        public string ReviewText { get; set; } = string.Empty;
 
-        [Required]
-        [Range(1, 5)]
+        [Required(ErrorMessage = "Rating is required.")]
+        [Range(1, 5, ErrorMessage = "Rating must be an integer between 1 and 5.")]
         public int Rating { get; set; }
 
         [DataType(DataType.Date)]
