@@ -17,11 +17,11 @@ namespace MassPersona_Media_Review.Pages.Reviews
         public Review Reviews{ get; set;} 
         public async Task<IActionResult> OnGetAsync(int? id){
             if(id == null || _context.Reviews == null){
-                return NotFound();
+                return RedirectToPage("/NotFound");
             }
             var review = await _context.Reviews.FirstOrDefaultAsync(review => review.Id == id);
             if(review == null){
-                return NotFound();
+                return RedirectToPage("/NotFound");
             }
             Reviews = review;
             return Page();

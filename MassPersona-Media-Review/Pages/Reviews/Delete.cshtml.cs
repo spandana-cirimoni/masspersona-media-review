@@ -29,12 +29,12 @@ namespace MassPersona_Media_Review.Pages.Reviews
         public async Task<IActionResult> OnPostAsync(int? id){
             
             if(id == null){
-                return NotFound();
+                return RedirectToPage("/NotFound");
             }
             var review = await _context.Reviews.FindAsync(id);
 
             if(review == null){
-                return Page();
+                return RedirectToPage("/NotFound");
             }
                 
             Reviews = review;
