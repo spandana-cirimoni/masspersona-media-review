@@ -1,10 +1,27 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="content-wrapper">
+    <!-- Image Section -->
+    <div class="image-container">
+        <img src="~/images/welcome.jpg" alt="Welcome Image" class="welcome-image" />
+    </div>
+
+    <!-- Welcome Message -->
+    <div class="welcome-container">
+        <h1>Welcome to Mass Persona Media Reviews!</h1>
+    </div>
+
+    <!-- Subtitle -->
+    <div class="subtitle-container">
+        <h4>Empowering you to share your thoughts on movies, TV shows, games, and more.</h4>
+    </div>
+
+    <!-- Button -->
+    <div>
+        <a href="@Url.Page("/Reviews/Home")" class="btn btn-primary">Get Started</a>
+    </div>
 </div>

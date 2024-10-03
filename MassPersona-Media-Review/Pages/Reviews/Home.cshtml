@@ -3,8 +3,15 @@
 @{
     ViewData["Title"] = "Home";
 }
-<h3>@ViewData["Title"]</h3>
-<hr>
+
+<!-- Success Alert -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 
 <div class="d-flex justify-content-between align-items-center mb-3">
     <a asp-page="Create" class="btn btn-primary">Create New Review</a>

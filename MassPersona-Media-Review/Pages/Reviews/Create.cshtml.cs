@@ -22,11 +22,14 @@ namespace MassPersona_Media_Review.Pages.Reviews
         public async Task<IActionResult> OnPostAsync(){
             CategoryList = new SelectList(Enum.GetValues(typeof(Category)));
             if(!ModelState.IsValid || _context.Reviews == null || Reviews == null){
-                return RedirectToPage("/NotFound");
+                return Page();
             }
+            
             Reviews.DateReviewed = DateTime.UtcNow;
             _context.Reviews.Add(Reviews);
             await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Review created successfully!";
             return RedirectToPage("Home");
         }
     }

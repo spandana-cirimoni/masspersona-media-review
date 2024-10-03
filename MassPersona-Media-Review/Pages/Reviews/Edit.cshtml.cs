@@ -41,6 +41,8 @@ namespace MassPersona_Media_Review.Pages.Reviews
             Reviews.DateReviewed = DateTime.UtcNow;
             _context.Reviews.Update(Reviews);
             await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Review updated successfully!";
             return RedirectToPage("Home");
         }
     }

@@ -40,6 +40,8 @@ namespace MassPersona_Media_Review.Pages.Reviews
             Reviews = review;
             _context.Remove(Reviews);
             await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Review Deleted successfully!";
             return RedirectToPage("Home");
         }
     }
