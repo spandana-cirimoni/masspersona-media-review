@@ -8,7 +8,7 @@ namespace MassPersonaMediaReview.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Title is required.")]
-        [StringLength(100, ErrorMessage = "Title cannot be longer than 25 characters.")]
+        [StringLength(100, ErrorMessage = "Title cannot be longer than 100 characters.")]
         public string Title { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Category is required.")]

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MassPersona_Media_Review.Migrations
 {
     [DbContext(typeof(MyAppDBContext))]
-    [Migration("20241001055654_InitialCreate")]
+    [Migration("20241003154905_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -45,11 +45,13 @@ namespace MassPersona_Media_Review.Migrations
 
                     b.Property<string>("ReviewText")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.HasKey("Id");
 

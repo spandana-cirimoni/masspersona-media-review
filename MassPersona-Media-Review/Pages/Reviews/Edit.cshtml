@@ -14,12 +14,12 @@
                     <input type="hidden" asp-for="Reviews.Id" />
                     <div class="mb-3">
                         <label asp-for="Reviews.Title" class="form-label"></label>
-                        <input asp-for="Reviews.Title" class="form-control" maxlength="25" />
+                        <input asp-for="Reviews.Title" class="form-control" maxlength="100" />
                         <span asp-validation-for="Reviews.Title" class="text-danger"></span>
                     </div>
                     <div class="mb-3">
                         <label asp-for="Reviews.Category" class="form-label"></label>
-                        <select asp-for="Reviews.Category" class="form-select">
+                        <select asp-for="Reviews.Category" class="form-select" asp-items="Model.CategoryList">
                             <option value="">-- Select Category --</option>
                             @* The SelectList in the model handles the options *@
                         </select>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="mb-3">
                         <label asp-for="Reviews.ReviewText" class="form-label"></label>
-                        <textarea asp-for="Reviews.ReviewText" class="form-control" rows="5" maxlength="100"></textarea>
+                        <textarea asp-for="Reviews.ReviewText" class="form-control" rows="5" maxlength="1000"></textarea>
                         <span asp-validation-for="Reviews.ReviewText" class="text-danger"></span>
                     </div>
                     <div class="mb-4">

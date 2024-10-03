@@ -18,9 +18,9 @@ namespace MassPersona_Media_Review.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Title = table.Column<string>(type: "text", nullable: false),
+                    Title = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Category = table.Column<string>(type: "text", nullable: false),
-                    ReviewText = table.Column<string>(type: "text", nullable: false),
+                    ReviewText = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
                     Rating = table.Column<int>(type: "integer", nullable: false),
                     DateReviewed = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
