@@ -18,7 +18,7 @@
     <form method="get" class="form-inline d-flex">
         <div class="form-group mr-2 d-flex align-items-center" style="padding-right: 10px;">
             <label asp-for="FilterRating" class="mr-2 mb-0">Rating: </label>
-            <select asp-for="FilterRating" class="form-control" style="padding-left: 10px;">
+            <select asp-for="FilterRating" class="form-select" style="padding-left: 10px;">
                 <option value="">All</option>
                 @for (int i = 1; i <= 5; i++)
                 {
@@ -35,7 +35,7 @@
         </div>
         <div class="form-group mr-2 d-flex align-items-center" style="padding-right: 10px;">
             <label asp-for="FilterCategory" class="mr-2 mb-0">Category: </label>
-            <select asp-for="FilterCategory" class="form-control" asp-items="Model.CategoryList" style="padding-left: 10px;">
+            <select asp-for="FilterCategory" class="form-select" asp-items="Model.CategoryList" style="padding-left: 10px;">
                 <option value="">All</option>
             </select>
         </div>
@@ -52,10 +52,10 @@
     <colgroup>
         <col style="width: 15%;">
         <col style="width: 5%;">
-        <col style="width: 30%;">
+        <col style="width: 25%;">
         <col style="width: 5%;">
         <col style="width: 15%;">
-        <col style="width: 30%;">
+        <col style="width: 35%;">
     </colgroup>
     <thead class="table-dark">
         <tr>

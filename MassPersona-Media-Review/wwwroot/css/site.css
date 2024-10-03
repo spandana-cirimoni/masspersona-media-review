@@ -21,7 +21,9 @@ body {
   margin-bottom: 60px;
 }
 
-/* Center the entire content vertically and horizontally */
+
+/* Custom CSS */
+
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -46,14 +48,12 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-/* Style the welcome message */
 .welcome-container h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
   color: #333;
 }
 
-/* Style the subtitle */
 .subtitle-container h4 {
   font-size: 1.2rem;
   margin-bottom: 30px;
@@ -63,93 +63,125 @@ body {
 
 /* Fixed Table Styling */
 .fixed-table {
-  table-layout: fixed; /* Enables fixed table layout */
-  width: 100%; /* Ensures the table spans the full width of its container */
-  border-collapse: collapse; /* Removes default spacing between cells */
+  table-layout: fixed; 
+  width: 100%; 
+  border-collapse: collapse;
 }
 
-/* Define Column Widths if not using <colgroup> */
-/* Uncomment and adjust if not using <colgroup> */
 
 .fixed-table th, .fixed-table td {
-  width: 15%; /* Example width, adjust as needed */
+  width: 15%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 
-/* Fixed Row Height */
 .fixed-table tbody tr {
-  height: 30px; /* Sets a fixed height for all rows */
+  height: 30px; 
 }
 
-/* Consistent Cell Styling */
 .fixed-table th, .fixed-table td {
-  padding: 8px; /* Consistent padding */
-  border: 1px solid #dee2e6; /* Adds borders to cells */
-  vertical-align: middle; /* Centers content vertically */
+  padding: 8px; 
+  border: 1px solid #dee2e6; 
+  vertical-align: middle;
 }
 
-/* Remove Underline from Table Heading Links */
 .fixed-table th a {
-  text-decoration: none; /* Removes underline */
-  color: inherit; /* Inherits the text color */
-  display: block; /* Ensures the entire header area is clickable */
+  text-decoration: none; 
+  color: inherit; 
+  display: block; 
 }
 
-/* Add Hover Effect on Table Heading Links */
+
 .fixed-table th a:hover {
-  text-decoration: underline; /* Adds underline on hover for better UX */
+  text-decoration: underline; 
 }
 
-/* Optional: Alternate Row Colors for Better Readability */
+
 .fixed-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2; /* Light gray background for even rows */
+  background-color: #f2f2f2; 
 }
 
 .fixed-table tbody tr:hover {
-  background-color: #e9ecef; /* Slightly darker on hover */
+  background-color: #e9ecef; 
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .fixed-table th, .fixed-table td {
-      padding: 8px; /* Reduces padding on smaller screens */
-      font-size: 0.9rem; /* Adjusts font size for readability */
+      padding: 8px; 
+      font-size: 0.9rem; 
   }
 
   .fixed-table tbody tr {
-      height: auto; /* Allows row height to adjust based on content */
-  }
-
-  /* Optional: Stack Table Headers on Smaller Screens */
-  .fixed-table thead {
-      display: none; /* Hides table headers */
-  }
+      height: auto; 
 
   .fixed-table, .fixed-table tbody, .fixed-table tr, .fixed-table td {
-      display: block; /* Makes table elements block-level */
-      width: 100%; /* Ensures full width */
+      display: block; 
+      width: 100%; 
   }
 
   .fixed-table tr {
-      margin-bottom: 15px; /* Adds spacing between rows */
+      margin-bottom: 15px; 
   }
 
   .fixed-table td {
-      text-align: right; /* Aligns text to the right */
-      padding-left: 50%; /* Creates space for pseudo-element labels */
-      position: relative; /* Positions pseudo-elements relative to cells */
+      text-align: right; 
+      padding-left: 50%; 
+      position: relative; 
   }
 
   .fixed-table td::before {
-      content: attr(data-label); /* Uses data-label attribute for labels */
+      content: attr(data-label); 
       position: absolute;
       left: 0;
-      width: 45%; /* Adjust as needed */
+      width: 45%; 
       padding-left: 15px;
       font-weight: bold;
       text-align: left;
+  }
+}
+}
+
+/* Edit, Create, Delete and View Components */
+.container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card {
+  border: none; 
+  border-radius: 10px; 
+}
+
+
+.form-label {
+  font-weight: 600; 
+}
+
+
+.form-control[readonly] {
+  background-color: #f8f9fa;
+}
+
+/* Buttons */
+.btn {
+  min-width: 100px; 
+}
+
+@media (max-width: 576px) {
+  .btn {
+      width: 100%; 
+      margin-bottom: 10px;
+  }
+
+  .d-flex.justify-content-between {
+      flex-direction: column; 
+      align-items: stretch;
+  }
+
+  .card-body {
+      padding: 20px;
   }
 }

@@ -89,8 +89,6 @@ namespace MassPersonaMediaReview.Pages.Reviews
 
             // Calculate total pages
             TotalPages = (int)Math.Ceiling(totalCount / (double)PageSize);
-
-            // Ensure TotalPages is at least 1 to prevent negative OFFSET
             TotalPages = TotalPages < 1 ? 1 : TotalPages;
 
             // Ensure CurrentPage is within valid range
