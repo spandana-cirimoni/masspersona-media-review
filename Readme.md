@@ -13,7 +13,6 @@ Welcome to MassPersona Media Review, a web application that allows users to crea
 - [Application Architecture](#application-architecture)
 - [Design Decisions](#design-decisions)
 - [Assumptions and Considerations](#assumptions-and-considerations)
-- [Contact](#contact)
 
 ---
 
